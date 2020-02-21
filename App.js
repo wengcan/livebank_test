@@ -8,6 +8,7 @@
 
 import React, {Component} from 'react';
 import {Button, NativeModules, Platform, StyleSheet,  Text, View} from 'react-native';
+import { WebView } from 'react-native-webview';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -28,6 +29,12 @@ export default class App extends Component<Props> {
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
         <Button title="Live Bank" onPress={this.openLiveBank} />
+
+        <WebView
+          source={{ uri: 'https://apac.cloud.livebank24.com/scbstagebetaext/client#' }}
+          style={{ marginTop: 20 }}
+        />
+
       </View>
     );
   }
